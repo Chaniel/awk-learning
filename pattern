@@ -1,0 +1,30 @@
+# regexp
+awk -F: '/^r/{print $1}' /etc/passwd
+
+# 
+echo "--------------- separate line ------------"
+
+# expression
+awk -F: '$3 >= 500{print $1,$3}' /etc/passwd
+
+echo "--------------- separate line ------------"
+# 
+awk -F: '$7~"bash$"{print $1, $7}' /etc/passwd
+
+echo "--------------- separate line ------------"
+# 
+awk -F: '$7!~"bash$"{print $1, $7}' /etc/passwd
+
+echo "--------------- separate line ------------"
+awk -F: '$3==0,$7~"nologin"{print $1, $3, $7}' /etc/passwd
+
+echo "--------------- separate line ------------"
+#  BEGIN END
+awk -F: '$3==0,$7~"nologin$"{printf "%-10s%-10s%-20s\n", $1,$3,$7}' /etc/passwd
+
+echo "--------------- separate line ------------"
+awk -F: 'BEGIN{print "Username     ID      Shell "} $3==0,$7~"nologin$"{printf "%-10s%-10s%-20s\n", $1,$3,$7}' /etc/passwd
+
+echo "--------------- separate line ------------"
+awk -F: 'BEGIN{print "Username     ID      Shell "} $3==0,$7~"nologin$"{printf "%-10s%-10s%-20s\n", $1,$3,$7} END{print "end of report"}' /etc/passwd
+

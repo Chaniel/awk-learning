@@ -1,0 +1,5 @@
+awk  'BEGIN{printf "%c\n", "a"}' 
+
+awk '{printf "%10s\n", $1}' test.txt
+
+awk -F: '{printf "%5d", $3}' /etc/passwd

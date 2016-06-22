@@ -1,0 +1,16 @@
+# awk [options] 'script' file1 file2, ...
+# awk [options] 'PATTERN { action }' file1 file2, ...
+    print, printf
+
+-F
+
+FS: field separator
+RS: Record separator
+OFS: Output Filed Separator: 
+ORS：Output Row Separator：
+
+awk -F:
+OFS="#"
+FS=":"
+
+

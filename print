@@ -1,0 +1,10 @@
+awk '{print $0}' test.txt 
+awk '{print $1}' test.txt 
+
+
+awk 'BEGIN{OFS="#"} {print $1,$2}' test.txt 
+awk 'BEGIN{OFS="#"} {print $1,"insert str",$2}' test.txt 
+
+awk -F: '{print $1, $3}' /etc/passwd
+
+

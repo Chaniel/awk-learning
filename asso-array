@@ -1,0 +1,7 @@
+awk -v j=10 '{for(i=1; i<NF; i++) {a[$i]=j; j++}} END{for (key in a){print key,a[key]} }' test.txt 
+
+
+awk -F: '{shell[$NF]++} END{for (key in shell){print key, shell[key]}}' /etc/passwd
+
+netstat -antp | awk '{stat[$6]++}END{for (key in stat){print key, stat[key]}}'
+

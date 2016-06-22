@@ -1,0 +1,24 @@
+# if (condition) {} else {}
+
+awk -F: '{if($1 == "root") {print $1, "admin"} else {print $1, "common user"}}' /etc/passwd
+
+echo "-----------------------------------------"
+awk -F: '{if($1 == "root") {printf "%15s: %s\n", $1, "admin"} else {printf "%15s: %s\n", $1, "common user"}}' /etc/passwd
+
+echo "-----------------------------------------"
+# if
+awk -F: -v sum=0 '{if($3>=500) {sum++; print $1,$3}} END{print sum}' /etc/passwd
+
+echo "-----------------------------------------"
+# while
+awk -F: '{i=1; while(i <= NF){if (length($i)>=4) {print $i}; i++} }' /etc/passwd
+
+echo "-----------------------------------------"
+awk -F: '{for(i=1; i<NF; i++) {if(length($i)>=4) { print $i }}}' /etc/passwd
+
+echo "-----------------------------------------"
+# case switch
+awk -F: '{}' /etc/passwd
+
+
+

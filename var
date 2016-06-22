@@ -1,0 +1,2 @@
+awk -v test="hello awk" 'BEGIN{print test}'
+awk  'BEGIN{test="hello awk"; print test}'
