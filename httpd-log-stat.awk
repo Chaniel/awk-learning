@@ -1,6 +1,6 @@
 awk '{ip[$1]++} END{for(key in ip) {print key, ip[key]}  }' /var/log/httpd/access.log
 
-awk -F" " '{ips[$1]++} END {for(ip in ips) {print ip, ips[ip]}}' access.log  | sort -r -k2
+awk -F" " '{ips[$1]++} END {for(ip in ips) {print ip, ips[ip]}}' access.log  | sort -r -k2 -n
 
 netstat -ant | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
 #每出现一被/^tcp/模式匹配到的行，数组S[$NF]就加1，NF为当前匹配到的行的最后一个字段，此处用其值做为数组S的元素索引；

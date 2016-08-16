@@ -1,3 +1,6 @@
+
+awk 'BEGIN{ print "start" } pattern { commands } END{ print "end" }' file
+
 # awk [options] 'script' file1 file2, ...
 # awk [options] 'PATTERN { action }' file1 file2, ...
     print, printf
