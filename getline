@@ -1,0 +1,2 @@
+# getline only read one line
+seq 5 | awk 'BEGIN{getline; print "read aheade first line", $0} {print $0}' 

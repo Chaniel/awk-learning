@@ -1,0 +1,2 @@
+VAR=10000
+echo | awk -v VARIABLE=$VAR '{print VARIABLE}'

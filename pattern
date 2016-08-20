@@ -28,3 +28,8 @@ awk -F: 'BEGIN{print "Username     ID      Shell "} $3==0,$7~"nologin$"{printf "
 echo "--------------- separate line ------------"
 awk -F: 'BEGIN{print "Username     ID      Shell "} $3==0,$7~"nologin$"{printf "%-10s%-10s%-20s\n", $1,$3,$7} END{print "end of report"}' /etc/passwd
 
+
+awk 'NR < 5'  # line number letter than 5
+awk 'NR==1,NR==4' # line num between 1,5
+awk '/linux/'  # line contains "linux"
+awk '!/linux/'  # line not contains "linux"
