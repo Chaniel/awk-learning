@@ -1,5 +1,12 @@
 # awk-learning
 
+## introduction
+1. awk is a report generating tool/language.
+2. gawk: gnu awk
+3. /bin/awk -> gawk
+
+
+## basic command structure
 awk 'BEGIN{ print "start" } pattern { commands } END{ print "end" }' file
 
 
@@ -8,6 +15,14 @@ awk 'BEGIN{ print "start" } pattern { commands } END{ print "end" }' file
 3. at the end of input stream, execute END{ commands } block.
 
 
-- awk is a report generating tool/language.
-- gawk: gnu awk
-- /bin/awk -> gawk
+## special variables
+- NR: number of records, 记录数据 ， 行号
+- NF: number of fields, 字段数量， 当前的字段数
+- $0: 当前整行文本内容
+- $1: 第一个字段的文本内容
+- $2: 第二个字段的文本内容
+
+
+
+
+
