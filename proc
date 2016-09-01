@@ -1,0 +1,2 @@
+cat environ | tr '\000' '\n' | awk '/SHELL/'
+
