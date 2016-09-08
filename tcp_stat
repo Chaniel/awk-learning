@@ -1,0 +1,4 @@
+netstat -ant | grep ^tcp | awk '{stat[$6]++} END{for( i in stat) {print i,stat[i]}}'
+ESTABLISHED 5
+LISTEN 12
+

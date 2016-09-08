@@ -1,0 +1,12 @@
+# cat file1 | tr -s '[:blank:]' ':'  > file1
+# exe this command, file1 will be clear
+
+
+
+# cat file1
+this:is:first:line.
+this:is:second:line.
+this:is:third:line.
+
+this:is:forth:line.
+

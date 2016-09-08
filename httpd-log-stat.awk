@@ -8,3 +8,7 @@ netstat -ant | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
 awk '{counts[$1]++}; END {for(url in counts) print counts[url], url}' /var/log/httpd/access_log
 #用法与上一个例子相同，用于统计某日志文件中IP地的访问量
 
+
+# 统计访问量在前10名的IP的地址
+awk '{print $1}' access.log | uniq -c | sort -k1 -nr | head -10
+cat access.log  | cut -f 1 -d" " | uniq  -c | sort -nr -k1 | head -n 10

@@ -1,5 +1,9 @@
 
 awk 'BEGIN{ print "start" } pattern { commands } END{ print "end" }' file
+awk 'BEGIN{a=1}/second/{print $3; b = $3} END{print a,b}' file
+
+# c and d is not defined, but awk will not throw error.
+awk 'BEGIN{a=1}/second/{print $3; b = $3} END{print a,b,c,d}' file
 
 # awk [options] 'script' file1 file2, ...
 # awk [options] 'PATTERN { action }' file1 file2, ...
@@ -15,5 +19,4 @@ ORS：Output Row Separator：
 awk -F:
 OFS="#"
 FS=":"
-
 
