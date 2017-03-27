@@ -1,6 +1,7 @@
 # AWK Usage Examples
+awk-examples contains many awk usage examples.
 
-## Introduction
+## Introduction of AWK Command
 1. awk is a report generating tool/language.
 2. gawk: gnu awk
 3. /bin/awk -> gawk
